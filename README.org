@@ -18,4 +18,23 @@ The latter solution has some issues as well. Because of browser security protect
 
 Electdocs takes a zipped folder as input, unzips the folder in a platform specific temporary directory, and displays the HTML based documentation in an electron window. This window also contains "tabs" for viewing several documentation files at once. 
 
+* Installation
 
+Installation requires that you have node and npm installed. 
+
+#+BEGIN_SRC bash
+git pull git@github.com:alexbrodersen/electdocs.git
+cd electdocs
+npm install
+npm start
+#+END_SRC
+
+* Usage
+
+Click the plus sign to create a new tab. This will open your file explorer. Select the zip file needed.
+
+* Creating your own offline documentation
+
+You can use wget to grab online documentation.
+
+You can use Rmarkdown to create your own.
