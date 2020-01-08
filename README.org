@@ -1,0 +1,21 @@
+* Electdocs
+
+Electdocs is a electron based viewer for html pages that have been bundled into a single zip file. 
+
+** The problem
+
+Writing documentation or code is easier than every using tools like markdown (etc) and then exporting the files into easily navigatable html/css/javascript based documents. While other export formats exist (PDF/Word/EPUB), none offer the flexibility and style of the html-based documentation. 
+
+However, the html-based documentation has some issues:
+1. Documentation is no longer contained in a single file, but a directory that contains many pages.
+2. Viewing the documentation requires either
+   - web hosting and navigating to an external link 
+   - navigating to an "index.html" or other page within a directory
+
+The latter solution has some issues as well. Because of browser security protections, some features of the html-based documentation doesn't work when viewed locally unless the user starts a local webserver in the appropriate directory.
+
+** The solution
+
+Electdocs takes a zipped folder as input, unzips the folder in a platform specific temporary directory, and displays the HTML based documentation in an electron window. This window also contains "tabs" for viewing several documentation files at once. 
+
+
