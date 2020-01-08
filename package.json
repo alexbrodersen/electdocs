@@ -10,6 +10,7 @@
   "author": "Alex Brodersen",
   "license": "ISC",
   "dependencies": {
+    "electron-tabs": "^0.11.0",
     "npm-install-version": "^6.0.2"
   },
   "devDependencies": {
