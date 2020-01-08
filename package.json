@@ -10,12 +10,12 @@
   "author": "Alex Brodersen",
   "license": "ISC",
   "dependencies": {
-    "electron-tabs": "^0.11.0",
-    "npm-install-version": "^6.0.2"
+      "electron-tabs": "^0.11.0",
+      "decompress-zip": "^0.2.2",
+      "temp": "^0.9.1"
   },
-  "devDependencies": {
-    "decompress-zip": "^0.2.2",
-    "electron": "^7.1.6",
-    "temp": "^0.9.1"
+    "devDependencies": {
+	"electron": "^7.1.6",
+	"electron-packager": "^14.1.1"
   }
 }
