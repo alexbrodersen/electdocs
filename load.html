@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="node_modules/electron-tabs/electron-tabs.css">
+    <style>
+      body {
+	  overflow: hidden;
+      }
+</style>
+  </head>
+  
+  <body>
+    <style>
+      
+      webview {
+	  margin-top: 21px;
+	  padding-bottom: 21px;
+	  overflow: visible;
+      }
+    </style>
+    <div class="etabs-tabgroup", style="margin:20px">
+      <div class="etabs-tabs"></div>
+      <div class="etabs-buttons"></div>
+    </div>
+    <div class="etabs-views"></div>
+    
+    <script>
+      
+      const {ipcRenderer}=require('electron')
+      const TabGroup = require('electron-tabs')
+
+      let tabGroup = new TabGroup({newTab: {title: "temp",
+					    src: "www.google.com",
+					    visible: false}});
+
+      function clickButton(){
+	  ipcRenderer.send('click-button','true')
+      }
+
+      ipcRenderer.send('openFile',()=>{
+	  
+      })
+            
+      tabGroup.on("tab-added", (tab, tabGroup) => {
+
+	  clickButton();
+	  ipcRenderer.on('locationData',(event,data)=>{
+	      console.log(data);
+	      tab.setTitle(data.fname);
+	      let webview = tab.webview;
+	      webview.loadURL(data.url);
+	      tab.show();
+	      tab.activate();
+	  });	  
+      });
+
+      // tabGroup.addTab({
+      //     title: "Electron",
+      //     src: "https://electronjs.org/",
+      //     visible: true,
+      // 	  active: true
+      // });
+
+    </script>
+    
+  </body>
+</html>
